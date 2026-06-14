@@ -189,13 +189,16 @@ npm run allure:open
 
 ## CI/CD Pipeline with GitHub Actions ##
 
-This project is configured with a CI/CD pipeline using GitHub Actions (.github/workflows/playwright-tests.yml). The pipeline is triggered on every push and pull_request to the main branch.
+This project is configured with a CI/CD pipeline using GitHub Actions (`.github/workflows/playwright-tests.yml`). The pipeline is triggered on every `push` and `pull_request` to the `main` branch.
 
-##__ The pipeline performs the following steps: __##
+The pipeline performs the following steps:
+1.  **Checks out** the latest code.
+2.  **Sets up** the Node.js environment.
+3.  **Installs** all project dependencies.
+4.  **Runs** the entire Playwright test suite.
+5.  **Generates** the Allure report from the test results.
+6.  **Deploys** the generated Allure report to GitHub Pages for live viewing.
 
-1. Checks out the latest code.
-2. Sets up the Node.js environment.
-3. Installs all project dependencies.
-4. Runs the entire Playwright test suite.
-5. Generates the Allure report from the test results.
-6. Deploys the generated Allure report to GitHub Pages for live viewing.
+A successful pipeline run looks like this:
+
+![Successful CI/CD Pipeline Run](./assets/ci-pipeline-success.png)
